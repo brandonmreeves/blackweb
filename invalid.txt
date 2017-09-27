@@ -4,6 +4,7 @@
 .3gpp
 ..aa
 .aac
+.ajp
 ..ab
 ..abd
 ..abef
@@ -30,6 +31,7 @@
 ..bd
 ..be
 .bin
+.bigcom
 ..bizarremovies
 ..blondewebcams
 ..borsten
@@ -50,6 +52,7 @@
 ..Clothes
 ..clubpigalle
 .cmd
+.ccom
 ..com
 .css
 ..dacf
@@ -301,6 +304,7 @@
 ..rotterdam
 ..rozeridders
 ..rukgratis
+.sample
 .scr
 ..serieuze
 .santander

@@ -1890,6 +1890,7 @@
 .nr
 .nra
 .nrw
+.ns
 .ns.ca
 .n.se
 .nsn.us

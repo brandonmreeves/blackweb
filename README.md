@@ -11,7 +11,7 @@
 
 |File|BL Domains|File size|
 |----|----------|---------|
-|blackweb.txt|8.341.485|193,4 MB|
+|blackweb.txt|2.296.577|57,4 MB|
 
 ### Dependencias / Dependencies
 
@@ -29,7 +29,7 @@ sudo /etc/init.d/blackweb.sh
 ```
 ### Actualización BLs / Update BLs
 
-Puede descargar el proyecto Blackweb y actualizar la ACL **blackweb.txt** en dependencia de sus necesidades. Tenga en cuenta que la captura y depuración de dominios es un proceso lento y puede tardar horas / You can download the Blackweb project and update the ACL **blackweb.txt** depending on your needs. Note that capturing and debugging domains is a slow process and can take hours
+También puede descargar el proyecto Blackweb y actualizar la ACL **blackweb.txt** en dependencia de sus necesidades / You can also download the Blackweb project and update the **blackweb.txt** ACL depending on your needs
 
 ```
 git clone --depth=1 https://github.com/maravento/blackweb.git
@@ -38,6 +38,8 @@ sudo chown root:root /etc/init.d/bwupdate.sh
 sudo chmod +x /etc/init.d/bwupdate.sh
 sudo /etc/init.d/bwupdate.sh
 ```
+El bash **bwupdate.sh** realiza captura, depuración y limpieza de dominios para evitar conflictos, sin embargo consume gran cantidad de recursos de hardware durante el procesamiento y puede tomar horas o días / The bash script **bwupdate.sh** performs capturing, debugging and domains cleanup to avoid conflicts, however it consumes a large amount of hardware resources during processing and can take hours or days
+
 #####  Verifique su ejecución / Check execution (/var/log/syslog):
 
 Ejecución exitosa / Successful execution
@@ -73,9 +75,9 @@ http_access deny blackweb
 
 **blackdomains.txt** contiene dominios no incluidos en **Blackweb** (e.g. .youtube.com .googlevideo.com, .ytimg.com) y **whitedomains.txt** contiene el subdominio **accounts.youtube.com** [desde Feb 2014, Google utiliza el subdominio **accounts.youtube.com** para autenticar sus servicios](http://wiki.squid-cache.org/ConfigExamples/Streams/YouTube) / **blackdomains.txt** contains domains not included in **Blackweb** (e.g. .youtube.com .googlevideo.com, .ytimg.com) and **whitedomains.txt** contains subdomain **accounts.youtube.com** [since February 2014, Google uses the accounts subdomain .youtube.com to authenticate their services](http://wiki.squid-cache.org/ConfigExamples/Streams/YouTube).
 
-### Data Sheet (Sources)
+### Data Sheet (Sources - Repositories)
 
-##### Blacklists
+##### Blacklists (URLs)
 
 [Shallalist](http://www.shallalist.de/Downloads/shallalist.tar.gz)
 
@@ -129,19 +131,19 @@ http_access deny blackweb
 
 [StevenBlack Hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts) (Replaces [Badd-Boyz-Hosts](https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/PULL_REQUESTS/domains.txt), [Someonewhocares](http://someonewhocares.org/hosts/hosts) and [KADhosts](https://raw.githubusercontent.com/azet12/KADhosts/master/KADhosts.txt))
 
-[Ultimate Super.Hosts Blacklist](https://github.com/mitchellkrogza/Ultimate.Hosts.Blacklist)
+[Ultimate Hosts Blacklist](https://github.com/mitchellkrogza/Ultimate.Hosts.Blacklist)
 
-[Hacked-Malware-Web-Sites](https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/.dev-tools/_strip_domains/domains.txt)
+[Hacked Malware Web Sites](https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/.dev-tools/_strip_domains/domains.txt)
 
-[NginxBadBotBlocker](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)
+[Nginx Ultimate Bad Bot Blocker](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)
 
 [BlackURLs](https://github.com/maravento/blackweb/raw/master/blackurls.txt)
 
-##### Ransomware
+##### Blacklists (Ransomware)
 
 [Ransomware Abuse](https://ransomwaretracker.abuse.ch/blocklist/)
 
-##### Domains Debugging
+##### Debugging (Whitelists URLs/TLDs)
 
 [TLDs IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt)
 
@@ -151,23 +153,33 @@ http_access deny blackweb
 
 [WhiteURLs](https://github.com/maravento/blackweb/raw/master/whiteurls.txt)
 
-[Invalid Domains/TLDs](https://github.com/maravento/blackweb/raw/master/invalid.txt)
-
 [RemoteURLs](https://github.com/maravento/remoteip/raw/master/remoteurls.txt)
 
 [ipv6-hosts](https://raw.githubusercontent.com/lennylxx/ipv6-hosts/master/hosts) (Partial)
 
 [O365IPAddresses](https://support.content.office.net/en-us/static/O365IPAddresses.xml) (Partial)
 
-[Parse Domains](https://github.com/lsemel/python-parse-domain/raw/master/parse_domain.py) (modified)
-
 [University Domains and Names Data List](https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json)
+
+[CENTRAL REPO Whitelisted Domains](https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/whitelist-domains.txt)
+
+##### Debugging (False Positives, Invalid and Dead Domains)
+
+[Invalid Domains/TLDs](https://github.com/maravento/blackweb/raw/master/invalid.txt)
+
+[CENTRAL REPO Dead Domain-All Combined](https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/dead-domains-ALL-combined.txt)
+
+[CENTRAL REPO False Positives](https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/false-positives.txt)
+
+##### Debugging (Tools)
+
+[Parse Domains](https://github.com/lsemel/python-parse-domain/raw/master/parse_domain.py) (modified)
 
 [httpstatus](https://httpstatus.io/)
 
 ### Contributions
 
-Agradecemos a todos aquellos que han contribuido a este proyecto. Los interesados pueden contribuir, enviándonos enlaces de nuevas "Blacklist", para ser incluidas en este proyecto / We thank all those who contributed to this project. Those interested may contribute sending us new "Blacklist" links to be included in this project
+Agradecemos a todos aquellos que han contribuido a este proyecto. Los interesados pueden contribuir, enviándonos enlaces de nuevas listas, para ser incluidas en este proyecto / We thank all those who have contributed to this project. Those interested can contribute, sending us links of new lists, to be included in this project
 
 ### Licence
 

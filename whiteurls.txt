@@ -20248,6 +20248,7 @@
 .images.windowsmedia.com
 .img.s-msn.com
 .img-s-msn-com.akamaized.net
+.img-prod-cms-rt-microsoft-com.akamaized.net
 .i.microsoft.com
 .i.microsoft.com.edgekey.net
 .im.live.com
@@ -20269,7 +20270,14 @@
 .keydelivery.mediaservices.windows.net
 .k.live.com
 .kor.delve.office.com
+.kv101-prod.do.dsp.mp.microsoft.com
 .kv201-prod.do.dsp.mp.microsoft.com
+.kv301-prod.do.dsp.mp.microsoft.com
+.kv401-prod.do.dsp.mp.microsoft.com
+.kv501-prod.do.dsp.mp.microsoft.com
+.kv601-prod.do.dsp.mp.microsoft.com
+.kv701-prod.do.dsp.mp.microsoft.com
+.kv801-prod.do.dsp.mp.microsoft.com
 .lam.delve.office.com
 .latest-swx.cdn.skype.com
 .lb1.ms.akadns.net
@@ -20381,6 +20389,7 @@
 .ms.tific.com
 .mtb.live.com
 .m.webtrends.com
+.mrodevicemgr.officeapps.live.com
 .nam.delve.office.com
 .n.bing.com
 .ncus-000.ocws.officeapps.live.com
@@ -22429,6 +22438,7 @@
 .siacontralorias.auditoria.gov.co
 .siaobserva.auditoria.gov.co
 .sic.gov.co
+.sicaac.gov.co
 .sicodis.dnp.gov.co
 .sigep.gov.co
 .sigob.mininterior.gov.co
@@ -26125,6 +26135,7 @@
 .centralpacificbank.com
 .chase.com
 .checkout.payulatam.com
+.cicbc.sf.todo1.com
 .cifin.asobancaria.com
 .citibank.be
 .citibank.co.cr
@@ -26170,6 +26181,7 @@
 .comprasypagospse.com
 .connect.secure.wellsfargo.com
 .contenido.grupobancolombia.com
+.correosegurobbta.bancodebogota.com
 .corusbank.com
 .daviviendapaypal.com
 .db.com
@@ -26271,6 +26283,7 @@
 .suntrust.com
 .svb.com
 .synovus.com
+.todo1.com
 .tcfbank.com
 .tdbank.com
 .theprivatebank.com
@@ -27342,6 +27355,8 @@
 .support.mozilla.org
 .survey.godaddy.com
 .surveymonkey.com
+.syc.com.co
+.formularios.syc.com.co
 .tags.tiqcdn.com
 .tech.yandex.com
 .tegrazone.com
