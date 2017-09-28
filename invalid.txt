@@ -71,6 +71,8 @@
 .drv
 .dwg
 .dzcom
+.error
+.errors
 ..ea
 ..ebfd
 ..ebony

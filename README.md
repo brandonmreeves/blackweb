@@ -11,7 +11,7 @@
 
 |File|BL Domains|File size|
 |----|----------|---------|
-|blackweb.txt|2.296.577|57,4 MB|
+|blackweb.txt|8.611.398|199,6 MB|
 
 ### Dependencias / Dependencies
 
@@ -77,19 +77,15 @@ http_access deny blackweb
 
 ### Data Sheet (Sources - Repositories)
 
-##### Blacklists (URLs)
+##### URLs Blacklists
 
 [Shallalist](http://www.shallalist.de/Downloads/shallalist.tar.gz)
-
-[UrlBlacklist](http://urlblacklist.com/?sec=download) ([Server Down since July 2017](https://groups.google.com/forum/#!topic/e2guardian/7WeHpD-54LE))
 
 [Capitole - Direction du Système d'Information (DSI)](http://dsi.ut-capitole.fr/blacklists/download/)
 
 [MESD blacklists](http://squidguard.mesd.k12.or.us/blacklists.tgz)
 
 [Yoyo Serverlist](http://pgl.yoyo.org/adservers/serverlist.php?hostformat=nohtml)
-
-[Passwall SpamAssassin](http://www.passwall.com/blacklist.txt) ([Server Down since Dec 2016](https://web.archive.org/web/20161203014003/http://www.passwall.com/blacklist.txt). Last Update included in [BlackURLs](https://github.com/maravento/blackweb/raw/master/blackurls.txt). [Mirror](https://gutl.jovenclub.cu/wp-content/uploads/2017/05/blacklist.txt))
 
 [Oleksiig Blacklist](https://raw.githubusercontent.com/oleksiig/Squid-BlackList/master/denied_ext.conf)
 
@@ -127,8 +123,6 @@ http_access deny blackweb
 
 [Carl Spam](http://www.carl.net/spam/access.txt)
 
-[Taz SpamDomains](http://www.taz.net.au/Mail/SpamDomains)
-
 [StevenBlack Hosts](https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts) (Replaces [Badd-Boyz-Hosts](https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/PULL_REQUESTS/domains.txt), [Someonewhocares](http://someonewhocares.org/hosts/hosts) and [KADhosts](https://raw.githubusercontent.com/azet12/KADhosts/master/KADhosts.txt))
 
 [Ultimate Hosts Blacklist](https://github.com/mitchellkrogza/Ultimate.Hosts.Blacklist)
@@ -139,11 +133,19 @@ http_access deny blackweb
 
 [BlackURLs](https://github.com/maravento/blackweb/raw/master/blackurls.txt)
 
-##### Blacklists (Ransomware)
+##### Inactive Blacklists 
+
+[UrlBlacklist](http://urlblacklist.com/?sec=download) ([Server Down since July 2017](https://groups.google.com/forum/#!topic/e2guardian/7WeHpD-54LE))
+
+[Taz SpamDomains](http://www.taz.net.au/Mail/SpamDomains)
+
+[Passwall SpamAssassin](http://www.passwall.com/blacklist.txt) ([Server Down since Dec 2016](https://web.archive.org/web/20161203014003/http://www.passwall.com/blacklist.txt). Last Update included in [BlackURLs](https://github.com/maravento/blackweb/raw/master/blackurls.txt). [Mirror](https://gutl.jovenclub.cu/wp-content/uploads/2017/05/blacklist.txt))
+
+##### Ransomware
 
 [Ransomware Abuse](https://ransomwaretracker.abuse.ch/blocklist/)
 
-##### Debugging (Whitelists URLs/TLDs)
+##### Debugging (URLs/TLDs Whitelists, Invalid Domains, etc)
 
 [TLDs IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt)
 
@@ -161,17 +163,11 @@ http_access deny blackweb
 
 [University Domains and Names Data List](https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json)
 
-[CENTRAL REPO Whitelisted Domains](https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/whitelist-domains.txt)
-
-##### Debugging (False Positives, Invalid and Dead Domains)
-
 [Invalid Domains/TLDs](https://github.com/maravento/blackweb/raw/master/invalid.txt)
-
-[CENTRAL REPO Dead Domain-All Combined](https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/dead-domains-ALL-combined.txt)
 
 [CENTRAL REPO False Positives](https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/false-positives.txt)
 
-##### Debugging (Tools)
+##### Tools
 
 [Parse Domains](https://github.com/lsemel/python-parse-domain/raw/master/parse_domain.py) (modified)
 

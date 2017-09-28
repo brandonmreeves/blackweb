@@ -68,7 +68,7 @@ fi
 
 # DOWNLOADING BLACKURLS
 echo
-echo "Downloading Blacklist URLs..."
+echo "Downloading BlackURLs..."
 
 # FILES
 function blurls() {
@@ -95,7 +95,6 @@ function blurls() {
 	blurls 'https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list' && sleep 1
 	blurls 'https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/.dev-tools/_strip_domains/domains.txt' && sleep 1
 	blurls 'https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt' && sleep 1
-	blurls 'http://www.taz.net.au/Mail/SpamDomains' && sleep 1
 	blurls 'http://www.carl.net/spam/access.txt' && sleep 1
 	blurls 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts' && sleep 1
     blurls 'https://hosts.ubuntu101.co.za/domains.list' && sleep 1
@@ -103,6 +102,7 @@ function blurls() {
 	#blurls 'https://raw.githubusercontent.com/azet12/KADhosts/master/KADhosts.txt' # replaced by StevenBlack Host
 	#blurls 'https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/PULL_REQUESTS/domains.txt' # replaced by StevenBlack Host
 	#blurls 'http://www.passwall.com/blacklist.txt' # SERVER DOWN
+	#blurls 'http://www.taz.net.au/Mail/SpamDomains' # SERVER DOWN
 
 function malwaredomains() {
     wget -q -c --retry-connrefused -t 0 "$1" && unzip -p domains.zip >> bl/bltmp.txt
@@ -130,7 +130,7 @@ echo "OK"
 
 # DOWNLOADING WHITEURLS
 echo
-echo "Downloading Whitelist URLs..."
+echo "Downloading WhiteURLs..."
 
 function remoteurl() {
     wget -q -c --retry-connrefused -t 0 "$1" -O - | sed -e '/^#/d' | sort -u >> whiteurls.txt
@@ -151,7 +151,7 @@ echo "OK"
 
 # DOWNLOADING WHITETLDS
 echo
-echo "Downloading Whitelist TLDs..."
+echo "Downloading WhiteTLDs, Invalids Domains, etc..."
 
 function iana() {
     wget -q -c --retry-connrefused -t 0 "$1" -O - | sed 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/' | sed -e '/^#/d' | sed 's/^/./' | sort -u >> whitetlds.txt
@@ -163,28 +163,17 @@ function publicsuffix() {
 }
 	publicsuffix 'https://publicsuffix.org/list/public_suffix_list.dat' && sleep 1
 
-echo "OK"
-
-# DOWNLOADING INVALID DOMAINS
-echo
-echo "Downloading Invalid Domains..."
-
-function centralinvalid() {
+function false-positives() {
     wget -q -c --retry-connrefused -t 0 "$1" -O - | awk '{print "."$1}' | sort -u | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' >> invalid.txt
 }
-	centralinvalid 'https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/dead-domains-ALL-combined.txt' && sleep 1
-
-function centralfalse() {
-    wget -q -c --retry-connrefused -t 0 "$1" -O - | awk '{print "."$1}' | sort -u | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' >> invalid.txt
-}
-	centralfalse 'https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/false-positives.txt' && sleep 1
+	false-positives 'https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/false-positives.txt' && sleep 1
 
 echo "OK"
 
 # CAPTURING DOMAINS
 echo
 echo "Capturing Domains..."
-find bl -type f -execdir egrep -oi "$regexd" {} \; | awk '{print "."$1}' | sort -u | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' > bl.txt
+find bl -type f -execdir egrep -oi "$regexd" {} \; | awk '{print "."$1}' | sort -u | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' > bl.txt && sleep 2
 echo "OK"
 
 # DEBUGGING BLACKWEB
