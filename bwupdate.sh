@@ -93,7 +93,7 @@ function blurls() {
 	blurls 'http://malc0de.com/bl/ZONES' && sleep 1
 	blurls 'https://db.aa419.org/fakebankslist.php' && sleep 1
 	blurls 'https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list' && sleep 1
-	blurls 'https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/.dev-tools/_strip_domains/domains.txt' && sleep 1
+	blurls 'https://raw.githubusercontent.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites/master/hacked-domains.list' && sleep 1
 	blurls 'https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt' && sleep 1
 	blurls 'http://www.carl.net/spam/access.txt' && sleep 1
 	blurls 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts' && sleep 1
@@ -142,11 +142,6 @@ function univ() {
 }
     univ 'https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json' && sleep 1
 
-function centralwl() {
-    wget -q -c --retry-connrefused -t 0 "$1" -O - | awk '{print "."$1}' | sort -u | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' >> whiteurls.txt
-}
-	centralwl 'https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/whitelist-domains.txt' && sleep 1
-
 echo "OK"
 
 # DOWNLOADING WHITETLDS
@@ -163,17 +158,19 @@ function publicsuffix() {
 }
 	publicsuffix 'https://publicsuffix.org/list/public_suffix_list.dat' && sleep 1
 
-function false-positives() {
-    wget -q -c --retry-connrefused -t 0 "$1" -O - | awk '{print "."$1}' | sort -u | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' >> invalid.txt
+echo "OK"
+
+function centralrepo() {
+    wget -q -c --retry-connrefused -t 0 "$1" -O - | awk '{print "."$1}'| sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' | sort -u >> invalid.txt
 }
-	false-positives 'https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/false-positives.txt' && sleep 1
+	centralrepo 'https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/DOMAINS-dead.txt' && sleep 1
 
 echo "OK"
 
 # CAPTURING DOMAINS
 echo
 echo "Capturing Domains..."
-find bl -type f -execdir egrep -oi "$regexd" {} \; | awk '{print "."$1}' | sort -u | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' > bl.txt && sleep 2
+find bl -type f -execdir egrep -oi "$regexd" {} \; | awk '{print "."$1}' | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' | sort -u > bl.txt && sleep 2
 echo "OK"
 
 # DEBUGGING BLACKWEB

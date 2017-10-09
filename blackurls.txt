@@ -477,6 +477,7 @@
 .pornearn.com
 .p.pw
 .protect.re
+.pastewma.com
 .q.gs
 .readability.com
 .re-direcciona.me
@@ -581,6 +582,19 @@
 .xtra1.gpsonextra.net
 .yahoomaillinks.com
 .yeabests.cc
+#
+# MINING
+.coin-hive.com
+.cnhv.co
+.gus.host
+.jsecoin.com
+.pr0gramm.com
+.jsecoin.com
+.reasedoper.pw
+.mataharirama.xyz
+.listat.biz
+.lmodr.biz
+.minecrunch.co
 #
 # SOCIAL NETWORK
 .500px.com

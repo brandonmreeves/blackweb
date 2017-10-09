@@ -11,7 +11,7 @@
 
 |File|BL Domains|File size|
 |----|----------|---------|
-|blackweb.txt|8.611.398|199,6 MB|
+|blackweb.txt|5.299.828|129,8 MB|
 
 ### Dependencias / Dependencies
 
@@ -133,13 +133,13 @@ http_access deny blackweb
 
 [BlackURLs](https://github.com/maravento/blackweb/raw/master/blackurls.txt)
 
-##### Inactive Blacklists 
-
 [UrlBlacklist](http://urlblacklist.com/?sec=download) ([Server Down since July 2017](https://groups.google.com/forum/#!topic/e2guardian/7WeHpD-54LE))
 
 [Taz SpamDomains](http://www.taz.net.au/Mail/SpamDomains)
 
 [Passwall SpamAssassin](http://www.passwall.com/blacklist.txt) ([Server Down since Dec 2016](https://web.archive.org/web/20161203014003/http://www.passwall.com/blacklist.txt). Last Update included in [BlackURLs](https://github.com/maravento/blackweb/raw/master/blackurls.txt). [Mirror](https://gutl.jovenclub.cu/wp-content/uploads/2017/05/blacklist.txt))
+
+[The Big List of Hacked Malware Web Sites](https://github.com/mitchellkrogza/The-Big-List-of-Hacked-Malware-Web-Sites)
 
 ##### Ransomware
 
@@ -165,7 +165,7 @@ http_access deny blackweb
 
 [Invalid Domains/TLDs](https://github.com/maravento/blackweb/raw/master/invalid.txt)
 
-[CENTRAL REPO False Positives](https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/false-positives.txt)
+[Central Repo Dead Domains](https://github.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects)
 
 ##### Tools
 
