@@ -170,7 +170,7 @@ echo "OK"
 # CAPTURING DOMAINS
 echo
 echo "Capturing Domains..."
-find bl -type f -execdir egrep -oi "$regexd" {} \; | awk '{print "."$1}' | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' | sort -u > bl.txt && sleep 2
+find bl -type f -execdir egrep -oi "$regexd" {} \; | sed '/[A-Z]/d' | awk '{print "."$1}' | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' | sort -u > bl.txt && sleep 2
 echo "OK"
 
 # DEBUGGING BLACKWEB
