@@ -138,7 +138,7 @@ function remoteurl() {
 	remoteurl 'https://raw.githubusercontent.com/maravento/remoteip/master/remoteurls.txt' && sleep 1
 
 function univ() {
-    wget -q -c --retry-connrefused -t 0 "$1" -O - | egrep -oi "$regexd" | awk '{print "."$1}' | grep -Pvi '(.htm(l)?|.the|.php(il)?)$' | sort -u | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' >> whiteurls.txt
+    wget -q -c --retry-connrefused -t 0 "$1" -O - | egrep -oi "$regexd" | grep -Pvi '(.htm(l)?|.the|.php(il)?)$' | sed -r 's:(^.?(www|ftp)[[:alnum:]]?.|^..?)::gi' | awk '{print "."$1}' | sort -u >> whiteurls.txt
 }
     univ 'https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json' && sleep 1
 
@@ -161,7 +161,7 @@ function publicsuffix() {
 echo "OK"
 
 function centralrepo() {
-    wget -q -c --retry-connrefused -t 0 "$1" -O - | awk '{print "."$1}'| sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' | sort -u >> invalid.txt
+    wget -q -c --retry-connrefused -t 0 "$1" -O - | sed -r 's:(^.?(www|ftp)[[:alnum:]]?.|^..?)::gi' | awk '{print "."$1}' | sort -u >> invalid.txt
 }
 	centralrepo 'https://raw.githubusercontent.com/mitchellkrogza/CENTRAL-REPO.Dead.Inactive.Whitelisted.Domains.For.Hosts.Projects/master/DOMAINS-dead.txt' && sleep 1
 
@@ -170,7 +170,7 @@ echo "OK"
 # CAPTURING DOMAINS
 echo
 echo "Capturing Domains..."
-find bl -type f -execdir egrep -oi "$regexd" {} \; | sed '/[A-Z]/d' | awk '{print "."$1}' | sed 's:\(www[[:alnum:]]*\.\|WWW[[:alnum:]]*\.\|ftp\.\|\.\.\.\|/.*\)::g' | sort -u > bl.txt && sleep 2
+find bl -type f -execdir egrep -oi "$regexd" {} \; | sed '/[A-Z]/d' | sed -r 's:(^.?(www|ftp)[[:alnum:]]?.|^..?)::gi' | awk '{print "."$1}' | sed -r '/^\.\W+/d' | sort -u > bl.txt && sleep 2
 echo "OK"
 
 # DEBUGGING BLACKWEB
