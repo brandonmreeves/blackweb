@@ -170,7 +170,9 @@ echo "OK"
 # CAPTURING DOMAINS
 echo
 echo "Capturing Domains..."
-find bl -type f -execdir egrep -oi "$regexd" {} \; | sed '/[A-Z]/d' | sed -r 's:(^.?(www|ftp)[[:alnum:]]?.|^..?)::gi' | awk '{print "."$1}' | sed -r '/^\.\W+/d' | sort -u > bl.txt && sleep 2
+# Capture domains with regex | delete lines with capital letters | delete lines with "0--" characters | delete lines that do not have letters or numbers | delete www|ftp|xxx|wvw and dot | put a dot at start line | delete lines that start with a dot and followed by characters that are not letters or numbers | sort and uniq
+find bl -type f -execdir egrep -oi "$regexd" {} \; | sed '/[A-Z]/d' | sed '/0--/d' | sed -r '/[^a-zA-Z0-9.-]/d' | sed -r  's:(^\.*?(www|ftp|xxx|wvw)[^.]*?\.|^\.\.?)::gi' | awk '{print "."$1}' | sed -r '/^\.\W+/d' | sort -u > bl.txt && sleep 2
+
 echo "OK"
 
 # DEBUGGING BLACKWEB
@@ -178,8 +180,8 @@ echo
 echo "Debugging Blackweb..."
 sed -e '/^#/d' whitetlds.txt | sort -u > tlds.txt
 sed -e '/^#/d' {invalid,whiteurls}.txt | sort -u > urls.txt
-chmod +x parse_domain.py
-python parse_domain.py | sort -u > blackweb.txt
+chmod +x tools/parse_domain.py
+python tools/parse_domain.py | sort -u > blackweb.txt
 
 # COPY ACL TO PATH
 cp -f blackweb.txt $route >/dev/null 2>&1

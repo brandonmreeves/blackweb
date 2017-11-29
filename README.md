@@ -11,7 +11,7 @@
 
 |File|BL Domains|File size|
 |----|----------|---------|
-|blackweb.txt|4.233.627|94,9 MB|
+|blackweb.txt|5.841.456|125,8 MB|
 
 ### Dependencias / Dependencies
 
@@ -172,6 +172,10 @@ http_access deny blackweb
 [Parse Domains](https://github.com/lsemel/python-parse-domain/raw/master/parse_domain.py) (modified)
 
 [httpstatus](https://httpstatus.io/)
+
+[httpstatus bash](https://github.com/maravento/blackweb/raw/master/tools/httpstatus.sh)
+
+[Debugging list](https://github.com/maravento/blackweb/raw/master/tools/debug.py)
 
 ### Contributions
 

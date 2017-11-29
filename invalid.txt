@@ -389,6 +389,7 @@
 ..praten
 .psd
 .psf
+.pdf
 .purchasecom
 .qbl
 .qt
