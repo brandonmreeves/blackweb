@@ -98,6 +98,7 @@ function blurls() {
 	blurls 'http://www.carl.net/spam/access.txt' && sleep 1
 	blurls 'https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts' && sleep 1
     blurls 'https://hosts.ubuntu101.co.za/domains.list' && sleep 1
+    blurls 'https://raw.githubusercontent.com/greatis/Anti-WebMiner/master/blacklist.txt' && sleep 1
 	#blurls 'http://someonewhocares.org/hosts/hosts' # replaced by StevenBlack Host
 	#blurls 'https://raw.githubusercontent.com/azet12/KADhosts/master/KADhosts.txt' # replaced by StevenBlack Host
 	#blurls 'https://raw.githubusercontent.com/mitchellkrogza/Badd-Boyz-Hosts/master/PULL_REQUESTS/domains.txt' # replaced by StevenBlack Host

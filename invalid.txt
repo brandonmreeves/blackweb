@@ -55,6 +55,7 @@
 .bigcom
 .biker
 .bin
+.bit
 ..bizarremovies
 .bkl
 ..blondewebcams
@@ -89,6 +90,7 @@
 .cnna
 .colombia
 ..com
+.coma
 .con
 .concussion
 .content
@@ -366,6 +368,7 @@
 ..online
 .overview
 ..pastel
+.pdf
 .peniche
 ..peterporn
 .php
@@ -389,7 +392,6 @@
 ..praten
 .psd
 .psf
-.pdf
 .purchasecom
 .qbl
 .qt
@@ -414,6 +416,7 @@
 .servenet
 .serveorg
 .sexcom
+.sexe
 ..sexecards
 .sex-in-com
 .shtm
@@ -451,6 +454,7 @@
 ..vandepotgerukt
 .vbe
 .vbs
+.verification
 .version
 .videos
 .virus

@@ -424,11 +424,12 @@
 .zoneiasiteoh.com
 .zzbuckettownrock.com
 #
-# ACORTADORES
+# ACORTADORES- SHORTER
 .44d.info
 .301.li
 .50tl.net
 .acortar.net
+.acortalo.net
 .ad5.eu
 .ad7.biz
 .adcrun.ch
@@ -469,6 +470,7 @@
 .livechatinc.com
 .lix.in
 .mije.net
+.mwpaste.com
 .ne8.org
 .nubrec.com
 .ouo.io
